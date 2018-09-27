@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d3c48a772491fee419d433e8c75caac7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AnchorPoint: {instanceID: 0}
+  - RadarPrefab: {fileID: 1690187260887246, guid: f36e4474e00f3a34f95c01c4ab971baf,
+      type: 2}
+  - RadarReference: {instanceID: 0}
+  - HitboxReference: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
