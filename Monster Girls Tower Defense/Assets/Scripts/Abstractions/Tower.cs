@@ -11,7 +11,7 @@ public abstract class Tower : Buildable
     public GameObject RadarPrefab;
 
     protected CircleCollider2D RadarReference;
-    protected CircleCollider2D HitboxReference;
+    public CircleCollider2D HitboxReference;
 
     #endregion
 
@@ -68,14 +68,14 @@ public abstract class Tower : Buildable
         {
             // Show "Radar" collider in green outline
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(RadarReference.transform.position, RadarReference.radius / 2);
+            Gizmos.DrawWireSphere(RadarReference.transform.position, RadarReference.radius);
         }
 
         if (HitboxReference != null)
         {
             // Show "Hitbox" collider in red outline
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(HitboxReference.transform.position, HitboxReference.radius / 2);
+            Gizmos.DrawWireSphere(HitboxReference.transform.position, HitboxReference.radius);
         }
     }
 

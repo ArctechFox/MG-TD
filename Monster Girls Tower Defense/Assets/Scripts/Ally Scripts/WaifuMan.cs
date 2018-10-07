@@ -7,6 +7,8 @@ public class WaifuMan : Tower
         AttackType = TowerAttackType.Melee;
         TargetingStyle = TowerTargetingStyle.SingleTarget;
 
+        AttackTimer.Start();
+
         // DetermineObjective every 1/30th of a second, 
         // instead of once per frame like in normal Update method (which realistically could've been up to 200 times a second depending on framerate, so this way is more efficient).
         //InvokeRepeating("DetermineObjective", 0f, .030f);
@@ -16,13 +18,14 @@ public class WaifuMan : Tower
     {
         base.InitializeComponents(AnchorPoint);
 
-        HitboxReference = GetComponent<CircleCollider2D>();
+        var radar = Instantiate(RadarPrefab, AnchorPoint.position, AnchorPoint.rotation);
+        radar.transform.parent = AnchorPoint;
 
-        RadarReference = new CircleCollider2D() { radius = Range };
-        RadarReference.transform.parent = AnchorPoint;
+        RadarReference = radar.GetComponent<CircleCollider2D>();
+        RadarReference.radius = Range;
         RadarReference.GetComponent<RadarScript>().tower = this;
 
-        transform.parent = RadarReference.transform;
+        transform.parent = radar.transform;
         this.AnchorPoint = AnchorPoint;
     }
 
@@ -57,10 +60,9 @@ public class WaifuMan : Tower
 
     protected override void Attack()
     {
-        AttackTimer.Start();
         if (AttackTimer.ElapsedMilliseconds >= Agility) // If we've waited as long or longer than it takes for the attack to cooldown
         {
-            AttackTimer.Reset();
+            AttackTimer.Restart();
 
             // TODO: Activate attack animation
             InflictDamage(EnemiesInRange[0]);

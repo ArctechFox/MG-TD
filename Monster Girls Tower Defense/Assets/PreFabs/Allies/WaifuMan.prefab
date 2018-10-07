@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1346585442824594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.60227, y: -32.110813, z: -2}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 8.335848, y: -35.36509, z: -2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +56,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.5
+  m_Radius: 4
 --- !u!114 &114382504126362078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,10 +71,11 @@ MonoBehaviour:
   AnchorPoint: {fileID: 0}
   RadarPrefab: {fileID: 1690187260887246, guid: f36e4474e00f3a34f95c01c4ab971baf,
     type: 2}
+  HitboxReference: {fileID: 58552028371638632}
   Damage: 5
-  Agility: 1250
-  Range: 8
-  Speed: 0
+  Agility: 1500
+  Range: 5
+  Speed: 5
   AttackType: 0
   TargetingStyle: 0
   EnemiesTargeted: []

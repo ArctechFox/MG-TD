@@ -7,7 +7,6 @@ public class WaveSpawner : MonoBehaviour
 
     public Text TextWaveCountdown;
     public Text TextCurrentWave;
-    public Button ButtonStart;
 
     public Transform EnemyPrefab;
     public Transform SpawnPoint;
@@ -28,8 +27,6 @@ public class WaveSpawner : MonoBehaviour
     {
         TextWaveCountdown.text = "";
         TextCurrentWave.text = string.Format("Wave: {0}/{1}", CurrentWave, NumberOfWaves);
-
-        ButtonStart.onClick.AddListener(ButtonStart_OnClick_Handler);
 
         ResetCountdown();
     }
@@ -88,7 +85,7 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(EnemyPrefab, SpawnPoint.position, SpawnPoint.rotation);
     }
 
-    private void ButtonStart_OnClick_Handler()
+    public void StartWave()
     {
         _ready = true;
     }

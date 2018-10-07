@@ -4,13 +4,10 @@ using System;
 
 public class Zombie : Enemy
 {
-    public Zombie()
-    {
-        Target = Waypoints.points[0];
-    }
-
     private void Start()
     {
+        Target = Waypoints.points[0];
+
         SetHealthBar();
     }
 
